@@ -1,19 +1,19 @@
 //
-//  ViewController.swift
+//  ViewControllerNew.swift
 //  iOS-ResponderChain-HitTesting
 //
-//  Created by Raman Kozar on 12/11/2023.
+//  Created by Raman Kozar on 13/11/2023.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewControllerNew: UIViewController {
 
     // Creating 4 views
-    let view1 = UIView()
-    let view2 = UIView()
-    let view3 = UIView()
-    let view4 = UIView()
+    let view1 = SubView()
+    let view2 = SubView()
+    let view3 = SubView()
+    let view4 = SubView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -92,6 +92,14 @@ class ViewController: UIViewController {
         
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        // touching in controller
+        print("ViewController - Touch Began")
+        super.touchesBegan(touches, with: event)
+        
+    }
+    
     @objc func viewTouched(tapGestureRecognizer: UITapGestureRecognizer) {
         print("gray view touched")
     }
@@ -114,3 +122,14 @@ class ViewController: UIViewController {
 
 }
 
+class SubView: UIView {
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        // touching in subview
+        print("Subview - Touch Began")
+        super.touchesBegan(touches, with: event)
+        
+    }
+    
+}
