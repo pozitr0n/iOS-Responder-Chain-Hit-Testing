@@ -16,8 +16,8 @@ class ViewControllerNew: UIViewController {
     let view4 = SubView()
     
     override func viewDidLoad() {
+       
         super.viewDidLoad()
-        
         testResponderChainHitTesting()
         
     }
